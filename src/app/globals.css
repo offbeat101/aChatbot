@@ -1,0 +1,40 @@
+:root {
+  --background-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  --foreground: #f4f4f4;
+  --bot-message-bg: #4caf50;
+  --user-message-bg: #f44336;
+  --input-bg: #2c2c2c;
+  --input-color: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background-gradient);
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.chatbot__input {
+  background-color: var(--input-bg) !important;
+  color: var(--input-color) !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  border: none !important;
+}
+
