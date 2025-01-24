@@ -19,18 +19,21 @@ class ActionProvider {
         this.stateRef = stateRef;
     }
 
-    callGenAI = async (prompt) => {
-        const chatCompletion = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
-            messages: [
-                { role: "system", content: "You are a friend" },
-                { role: 'user', content: prompt }
-            ],
-            temperature: 0.5,
-            max_tokens: 50
-        });
-        return chatCompletion.choices[0].message.content;
-    }
+ const callGenAI = async (prompt) => {
+    const chatCompletion = await openai.chat.completions.create({
+        model: 'gpt-3.5-turbo',
+        messages: [
+            { 
+                role: "system", 
+                content: "You are a compassionate and empathetic mental health support assistant. Your goal is to provide emotional support, offer coping strategies, and help users feel heard and understood. You can suggest mindfulness exercises, breathing techniques, or simply lend a listening ear. Always respond with kindness and avoid giving medical advice. If the user is in crisis, encourage them to seek professional help." 
+            },
+            { role: 'user', content: prompt }
+        ],
+        temperature: 0.7,  
+        max_tokens: 150    
+    });
+    return chatCompletion.choices[0].message.content;
+};
 
     timer = ms => new Promise(res => setTimeout(res, ms));
 
